@@ -1,0 +1,26 @@
+#include<p18f4580.h>
+
+#define Dir_SW TRISCbits.RC0
+#define Switch PORTCbits.RC0
+
+#define Dir_Led TRISCbits.RC6
+#define Led PORTCbits.RC6
+
+#define ON 1
+#define OFF 0
+
+void main()
+{
+	Dir_SW = 1;
+	Dir_Led = 0;
+	
+	while(1)
+	{
+		if(Switch == 0)
+			Led = ON;
+		else 
+			Led = OFF;
+	}
+}
+		
+	
